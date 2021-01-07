@@ -1,18 +1,19 @@
 import secrets
 
-print(secrets.randbelow(100000))
-print(secrets.randbits(10))
-print(secrets.choice(['a', 'e', 'i', 'o', 'u', 'sometimes y']))
-print(secrets.token_bytes(nbytes=100))
-print(secrets.token_hex(nbytes=100))
-print(secrets.token_urlsafe(nbytes=100))
+def try_things():
+    print(secrets.randbelow(100000))
+    print(secrets.randbits(10))
+    print(secrets.choice(['a', 'e', 'i', 'o', 'u', 'sometimes y']))
+    print(secrets.token_bytes(nbytes=100))
+    print(secrets.token_hex(nbytes=100))
+    print(secrets.token_urlsafe(nbytes=100))
 
-a = secrets.token_bytes(nbytes=10)
-b = secrets.token_bytes(nbytes=10)
+    a = secrets.token_bytes(nbytes=10)
+    b = secrets.token_bytes(nbytes=10)
 
-# Return True if strings a and b are equal, otherwise False,
-# in such a way as to reduce the risk of timing attacks.
-print(secrets.compare_digest(a, b))
+    # Return True if strings a and b are equal, otherwise False,
+    # in such a way as to reduce the risk of timing attacks.
+    print(secrets.compare_digest(a, b))
 
 
 def xkcd_password(number_of_words: int = 4) -> str:
@@ -29,5 +30,7 @@ def xkcd_password(number_of_words: int = 4) -> str:
     return password
 
 
-print(xkcd_password())
-print(xkcd_password(number_of_words=6))
+if __name__ == '__main__':
+    try_things()
+    print(xkcd_password())
+    print(xkcd_password(number_of_words=6))
